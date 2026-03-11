@@ -18,8 +18,8 @@ export default function PublicationsPage() {
       <PageHero
         variant="compact"
         eyebrow="Publication record"
-        title="Official references only, with scope kept explicit."
-        description="This page is reserved for official references tied to the library and to downstream applications when their scope can be stated clearly."
+        title="Publications"
+        description="References to nevelib and to downstream applications will be listed here once published."
       />
 
       <PlaceholderPanel
@@ -30,13 +30,13 @@ export default function PublicationsPage() {
 
       <PageSection
         eyebrow="Scope"
-        title="How this page will be used"
-        description="Method references centered on nevelib belong here. Downstream biological papers will be listed separately and with their relationship to the library made explicit."
+        title="Scope"
+        description="Methodological papers on nevelib and biological papers from downstream projects, listed separately."
       >
         <div className="max-w-3xl">
           <SurfaceCard
             title="Publication record"
-            description="Entries will be added only once a public preprint or journal article exists and can be cited in its final public form."
+            description="Entries will appear once a preprint or journal article is publicly available."
           />
         </div>
       </PageSection>

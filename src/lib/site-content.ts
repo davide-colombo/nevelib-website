@@ -15,7 +15,7 @@ export const trustSignals = [
   { label: "Scope", value: "6 current module families" },
   { label: "Interfaces", value: "Focused CLIs and Python API" },
   { label: "Runtime", value: "Per-module YAML configs" },
-  { label: "Status", value: "Alpha-stage 0.1.0" },
+  { label: "Status", value: "Alpha-stage 0.4.0" },
 ] as const;
 
 export const moduleFamilies = [

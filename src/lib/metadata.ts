@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const siteName = "nevelib";
 const siteDescription =
-  "Public website for nevelib, a modular Python bioinformatics library for genomic sequence analysis and reusable downstream workflow support.";
+  "nevelib — a modular Python bioinformatics library for genomic sequence analysis.";
 
 function resolveMetadataBase(): URL | undefined {
   const candidates = [

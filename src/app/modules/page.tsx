@@ -39,14 +39,14 @@ export default function ModulesPage() {
     <>
       <PageHero
         eyebrow="Current package surface"
-        title="Reusable capability families, described in user-facing terms."
-        description="The labels on this page are meant for public orientation, but they map directly to the current package structure and command-line entry points shipped by nevelib today."
+        title="What the library provides"
+        description="Each module family corresponds to a package directory, a CLI entry point, and a set of external tool integrations."
       />
 
       <PageSection
         eyebrow="Module families"
-        title="What is installed with the current library"
-        description="These capabilities correspond to the module directories, CLI entry points, and external tool integrations present in the repository."
+        title="Installed modules"
+        description="All six module families are included in a base install."
       >
         <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
           {moduleFamilies.map((module) => (
@@ -74,7 +74,7 @@ export default function ModulesPage() {
       <PageSection
         eyebrow="Shared conventions"
         title="Common patterns across the current modules"
-        description="Even though the modules solve different problems, the package keeps a consistent shape across interfaces and runtime behavior."
+        description="Consistent interfaces and runtime behavior across all modules."
       >
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {sharedPatterns.map((pattern) => (

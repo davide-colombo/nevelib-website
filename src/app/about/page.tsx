@@ -23,14 +23,14 @@ export default function AboutPage() {
       <PageHero
         variant="compact"
         eyebrow="Project context"
-        title="nevelib was built as reusable research software, not as a generic pipeline website."
-        description="This page explains who built the library, the research context that shaped it, and why the codebase is kept separate from downstream applications."
+        title="About nevelib"
+        description="Who maintains the library, the research behind it, and how it relates to downstream projects."
       />
 
       <PageSection
         eyebrow="Author and research context"
-        title="Davide Colombo built nevelib from recurring research-software needs"
-        description="The site now states the scientific setting directly instead of hiding it behind repository-neutral wording."
+        title="Author and research context"
+        description="The scientific setting that drives the library's development."
       >
         <div className="grid gap-5 lg:grid-cols-[1.4fr_0.6fr]">
           <SurfaceCard

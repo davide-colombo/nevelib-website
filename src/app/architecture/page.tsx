@@ -42,7 +42,7 @@ export default function ArchitecturePage() {
       <PageSection
         eyebrow="Engineered schematic"
         title="Conceptual layers"
-        description="This is the public mental model for the current codebase. It tracks the package structure without turning the site into source-tree documentation."
+        description="How the package, its shared infrastructure, and external tools relate to downstream applications."
       >
         <ArchitectureDiagram />
       </PageSection>
@@ -50,7 +50,7 @@ export default function ArchitecturePage() {
       <PageSection
         eyebrow="Scope split"
         title="What belongs in the library and what does not"
-        description="The distinction is practical rather than cosmetic. It keeps public claims exact and helps downstream applications evolve without inflating the library's scope."
+        description="A practical separation that keeps the library installable and testable independently of any single downstream project."
       >
         <div className="grid gap-5 lg:grid-cols-2">
           <SurfaceCard
@@ -79,8 +79,8 @@ export default function ArchitecturePage() {
 
       <PageSection
         eyebrow="Why this split matters"
-        title="A library-first structure keeps claims smaller and reuse easier"
-        description="The architecture is intentionally conservative. It favors focused interfaces over a single, overly broad product claim."
+        title="Why this structure"
+        description="Focused interfaces over a monolithic pipeline."
       >
         <div className="grid gap-5 lg:grid-cols-3">
           <SurfaceCard

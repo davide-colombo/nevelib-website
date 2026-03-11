@@ -21,10 +21,13 @@ pip install -e ".[dev]"`;
 
 const cliUsage = `nevelib-reads path/to/config.yaml
 nevelib-assembly path/to/config.yaml
-nevelib-search path/to/config.yaml`;
+nevelib-search path/to/config.yaml
+nevelib-clustering path/to/config.yaml
+nevelib-msa path/to/config.yaml
+nevelib-mapping path/to/config.yaml`;
 
-const sampleConfig = `cp $(python -c "import nevelib.reads; print(nevelib.reads.__path__[0])")/config.sample.yaml my-reads-config.yaml
-cp $(python -c "import nevelib.search; print(nevelib.search.__path__[0])")/config.sample.yaml my-search-config.yaml`;
+const sampleConfig = `cp $(python3 -c "import nevelib.reads; print(nevelib.reads.__path__[0])")/config.sample.yaml my-reads-config.yaml
+cp $(python3 -c "import nevelib.search; print(nevelib.search.__path__[0])")/config.sample.yaml my-search-config.yaml`;
 
 const pythonUsage = `from nevelib.search.blast import run_blastn
 from nevelib.clustering.mmseqs import run_mmseqs_linclust
@@ -35,8 +38,8 @@ export default function GettingStartedPage() {
     <>
       <PageHero
         eyebrow="Practical orientation"
-        title="Straightforward to install, but some capabilities depend on standard external tools."
-        description="The current package is a normal Python project with CLI and API surfaces. The exact environment you need depends on which module families you plan to use, because several modules wrap established bioinformatics executables."
+        title="Installation and usage"
+        description="nevelib is a standard Python package. Some modules wrap external bioinformatics tools that must be on PATH."
         actions={[
           { href: githubUrl, label: "Repository", external: true },
           { href: "/modules", label: "Module overview", variant: "secondary" },
@@ -127,13 +130,13 @@ export default function GettingStartedPage() {
 
       <PageSection
         eyebrow="Practical notes"
-        title="Use the current package with realistic expectations"
-        description="The package is already used as a reusable software layer, but it should still be read as an evolving research-software codebase rather than a hardened general platform."
+        title="Notes"
+        description="nevelib is evolving research software, not a hardened platform."
       >
         <div className="grid gap-5 lg:grid-cols-3">
           <SurfaceCard
             title="Alpha-stage package"
-            description="The package metadata itself marks the project as alpha, and the site keeps that visible rather than sanding it away."
+            description="Marked as alpha in package classifiers. APIs may change between minor versions."
           />
           <SurfaceCard
             title="Module-specific environments"
