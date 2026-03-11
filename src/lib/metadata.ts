@@ -3,8 +3,38 @@ import type { Metadata } from "next";
 const siteName = "nevelib";
 const siteDescription =
   "Public website for nevelib, a modular Python bioinformatics library for genomic sequence analysis and reusable downstream workflow support.";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
+
+function resolveMetadataBase(): URL | undefined {
+  const candidates = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.NEXT_PUBLIC_VERCEL_URL,
+    process.env.VERCEL_URL,
+  ];
+
+  for (const candidate of candidates) {
+    const trimmed = candidate?.trim();
+
+    if (!trimmed) {
+      continue;
+    }
+
+    const withProtocol = trimmed.includes("://")
+      ? trimmed
+      : `https://${trimmed}`;
+
+    try {
+      return new URL(withProtocol);
+    } catch {
+      continue;
+    }
+  }
+
+  return undefined;
+}
+
+const metadataBase = resolveMetadataBase();
 
 export function buildMetadata({
   title,
