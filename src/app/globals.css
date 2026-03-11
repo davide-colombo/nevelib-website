@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
 }
 
 body {
@@ -42,4 +43,3 @@ p {
 code {
   font-family: var(--font-ibm-plex-mono);
 }
-

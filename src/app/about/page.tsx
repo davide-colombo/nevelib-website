@@ -8,8 +8,14 @@ export const metadata = buildMetadata({
   pathname: "/about",
   title: "About",
   description:
-    "About the nevelib project, its author, and the repository-level basis for its public description.",
+    "About the nevelib project, its author, the research context behind it, and why it remains distinct from downstream applications.",
 });
+
+const aboutAuthorResearchParagraphs = [
+  "nevelib was built by Davide Colombo, a third-year PhD candidate with a biomedical engineering and bioengineering background. The library grew out of day-to-day research software needs rather than from a generic platform exercise.",
+  "His current research focuses on Aedes albopictus mosquito genomics, especially endogenous viral elements, their transposable-element context, piRNA-related analyses, and the reproducible computational workflows required to study those questions across datasets.",
+  "nevelib exists as the reusable software layer for those recurring sequence-analysis tasks. Downstream applications can then handle project-specific orchestration, thresholds, reporting, and biological interpretation while the underlying library stays installable, testable, and reusable.",
+] as const;
 
 export default function AboutPage() {
   return (
@@ -17,27 +23,28 @@ export default function AboutPage() {
       <PageHero
         variant="compact"
         eyebrow="Project context"
-        title="A restrained public profile for the library and its source basis."
-        description="This page keeps the project context simple: authorship, repository scope, and the basis for the public description used across the site."
+        title="nevelib was built as reusable research software, not as a generic pipeline website."
+        description="This page explains who built the library, the research context that shaped it, and why the codebase is kept separate from downstream applications."
       />
 
       <PageSection
-        eyebrow="Project basis"
-        title="What this website is grounded in"
-        description="The public description stays close to what can be supported directly by the current nevelib and nexteve-app repositories."
+        eyebrow="Author and research context"
+        title="Davide Colombo built nevelib from recurring research-software needs"
+        description="The site now states the scientific setting directly instead of hiding it behind repository-neutral wording."
       >
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-[1.4fr_0.6fr]">
           <SurfaceCard
-            title="Author"
-            description="nevelib is authored by Davide Colombo. Both repositories currently list him as author in package metadata."
-          />
-          <SurfaceCard
-            title="Public basis"
-            description="This website draws from the public package metadata, module interfaces, documented dependencies, and repository structure that are available today."
-          />
+            title="Author and research context"
+            description={aboutAuthorResearchParagraphs[0]}
+          >
+            <div className="space-y-4 text-[0.97rem] leading-7 text-text-secondary">
+              <p>{aboutAuthorResearchParagraphs[1]}</p>
+              <p>{aboutAuthorResearchParagraphs[2]}</p>
+            </div>
+          </SurfaceCard>
           <SurfaceCard
             title="Repositories"
-            description="nevelib is presented here as its own reusable library. nexteve-app remains a separate downstream application and is referenced only where it clarifies current use."
+            description="nevelib is the reusable library itself. nexteve-app remains a separate downstream application and is referenced only to clarify how the library is used in practice."
           >
             <div className="flex flex-col gap-2 text-sm">
               <a
@@ -62,18 +69,18 @@ export default function AboutPage() {
       </PageSection>
 
       <PageSection
-        eyebrow="Public stance"
-        title="How the project is presented"
-        description="The site keeps its scope narrow on purpose: library first, claims tied to the repositories, and separate records for downstream applications and publications."
+        eyebrow="Library boundary"
+        title="Keep reusable sequence-analysis code separate from application-specific interpretation"
+        description="This boundary is the point of the project: the lower-level software stays reusable, while downstream work remains free to define its own scientific semantics."
       >
         <div className="grid gap-5 lg:grid-cols-2">
           <SurfaceCard
-            title="Library-first description"
-            description="The site centers nevelib as a reusable software library rather than folding it into a broader workflow claim."
+            title="What belongs in nevelib"
+            description="Reusable modules for read handling, assembly support, homology search, clustering, multiple sequence alignment, mapping, configuration loading, and external-tool execution belong in the library because they recur across analyses."
           />
           <SurfaceCard
-            title="Conservative record"
-            description="Version status, license, interfaces, and downstream references are stated only where they are supported by the current public repositories."
+            title="What stays downstream"
+            description="Applications such as nexteve-app add stage orchestration, thresholds, outputs, and biological interpretation for a specific study or workflow. Keeping that logic downstream prevents the library from collapsing into one project-specific pipeline."
           />
         </div>
       </PageSection>

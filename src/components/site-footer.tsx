@@ -2,44 +2,48 @@ import Link from "next/link";
 
 import { githubUrl } from "@/lib/site-content";
 
+const footerProjectText =
+  "nevelib documents reusable sequence-analysis software extracted from ongoing research work rather than acting as a one-off pipeline landing page.";
+
+const footerResearchText =
+  "The library is maintained by Davide Colombo and reflects research on Aedes albopictus genomics, endogenous viral elements, transposable-element context, piRNA-related analyses, and reusable bioinformatics workflow design.";
+
+const footerBoundaryText =
+  "nevelib remains the reusable software layer; downstream applications such as nexteve-app add project-specific orchestration, thresholds, and biological interpretation.";
+
+const footerSourceNote =
+  "Website content is tied to the public nevelib codebase and its documented downstream context.";
+
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/80 bg-bg-panel/55">
+    <footer className="border-t border-border/80 bg-bg-panel/62">
       <div className="mx-auto grid max-w-page gap-8 px-6 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:px-12">
         <div>
-          <p className="font-mono text-[0.72rem] uppercase tracking-[0.28em] text-text-tertiary">
+          <p className="font-mono text-[0.78rem] uppercase tracking-[0.22em] text-text-tertiary">
             Project
           </p>
-          <p className="mt-3 text-sm leading-6 text-text-secondary">
-            Modular Python bioinformatics library for reusable sequence-analysis
-            tasks.
-          </p>
+          <p className="mt-3 text-[0.95rem] leading-7 text-text-secondary">{footerProjectText}</p>
         </div>
 
         <div>
-          <p className="font-mono text-[0.72rem] uppercase tracking-[0.28em] text-text-tertiary">
-            Author
+          <p className="font-mono text-[0.78rem] uppercase tracking-[0.22em] text-text-tertiary">
+            Research context
           </p>
-          <p className="mt-3 text-sm leading-6 text-text-secondary">
-            Davide Colombo
-          </p>
+          <p className="mt-3 text-[0.95rem] leading-7 text-text-secondary">{footerResearchText}</p>
         </div>
 
         <div>
-          <p className="font-mono text-[0.72rem] uppercase tracking-[0.28em] text-text-tertiary">
-            Scope
+          <p className="font-mono text-[0.78rem] uppercase tracking-[0.22em] text-text-tertiary">
+            Library boundary
           </p>
-          <p className="mt-3 text-sm leading-6 text-text-secondary">
-            This website describes the library itself. Downstream applications
-            and publication records are kept in their own sections.
-          </p>
+          <p className="mt-3 text-[0.95rem] leading-7 text-text-secondary">{footerBoundaryText}</p>
         </div>
 
         <div>
-          <p className="font-mono text-[0.72rem] uppercase tracking-[0.28em] text-text-tertiary">
+          <p className="font-mono text-[0.78rem] uppercase tracking-[0.22em] text-text-tertiary">
             Source
           </p>
-          <div className="mt-3 flex flex-col gap-2 text-sm text-text-secondary">
+          <div className="mt-3 flex flex-col gap-2 text-[0.95rem] text-text-secondary">
             <a
               href={githubUrl}
               target="_blank"
@@ -59,9 +63,8 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-border-muted/80">
-        <div className="mx-auto max-w-page px-6 py-4 text-xs text-text-tertiary lg:px-12">
-          Content is grounded in the current public repositories and package
-          metadata.
+        <div className="mx-auto max-w-page px-6 py-4 text-sm text-text-tertiary lg:px-12">
+          {footerSourceNote}
         </div>
       </div>
     </footer>

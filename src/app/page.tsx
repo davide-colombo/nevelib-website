@@ -12,36 +12,19 @@ export const metadata = buildMetadata({
     "nevelib is a modular Python bioinformatics library for sequence analysis, exposed through focused CLIs and importable Python modules.",
 });
 
-const executionModel = [
-  {
-    title: "Per-module configuration",
-    description:
-      "Each shipped capability family is driven by a single YAML configuration file, with sample configs present in every current module.",
-  },
-  {
-    title: "CLI and Python entry points",
-    description:
-      "The package exposes module-specific executables while keeping functions importable from Python for downstream composition.",
-  },
-  {
-    title: "Explicit external tool wrappers",
-    description:
-      "Standard bioinformatics tools remain visible dependencies rather than hidden implementation details.",
-  },
-  {
-    title: "Test-backed codebase",
-    description:
-      "The repository includes pytest suites across the current module families rather than relying on untested wrappers alone.",
-  },
-] as const;
+const homepageResearchContext =
+  "nevelib is built by Davide Colombo, a third-year PhD candidate with a biomedical engineering and bioengineering background. His current research studies Aedes albopictus mosquito genomics, with particular attention to endogenous viral elements, transposable-element context, piRNA-related analyses, and the reusable bioinformatics workflows needed to support that work.";
+
+const homepageBoundaryContext =
+  "The library exists to keep those recurring sequence-analysis operations in a reusable layer. Downstream applications can then add project-specific orchestration, thresholds, and biological interpretation without forcing every research workflow to rebuild the same lower-level software.";
 
 export default function HomePage() {
   return (
     <>
       <PageHero
         eyebrow="Reusable bioinformatics library"
-        title="A modular Python foundation for sequence analysis workflows."
-        description="nevelib packages read handling, assembly support, homology search, clustering, multiple sequence alignment, and mapping into focused CLIs and importable Python modules. The current library is configuration-driven, modular, and intended for reuse inside downstream research software."
+        title="Reusable sequence-analysis modules for Python research workflows."
+        description="nevelib is an installable Python library for read preparation, assembly support, homology search, clustering, multiple sequence alignment, and mapping. It exposes focused CLIs and importable Python modules so downstream research software can reuse these operations without absorbing them into one application."
         className="min-h-[72svh]"
         actions={[
           { href: "/getting-started", label: "Get started" },
@@ -49,43 +32,56 @@ export default function HomePage() {
         ]}
         panel={
           <div className="space-y-4">
-            <div className="rounded-[1.4rem] border border-accent/35 bg-accent-subtle/70 p-5">
-              <p className="font-mono text-[0.72rem] uppercase tracking-[0.28em] text-accent">
-                Downstream context
+            <div className="rounded-[1.35rem] border border-border bg-bg-panel/82 p-5 sm:p-6">
+              <p className="font-mono text-[0.78rem] uppercase tracking-[0.22em] text-accent">
+                Current library profile
               </p>
-              <p className="mt-3 text-sm leading-7 text-text-secondary">
-                nevelib already serves as a reusable software layer in{" "}
-                <Link href="/applications" className="text-text-primary underline-offset-4 hover:underline">
-                  nexteve-app
-                </Link>
-                , a separate downstream pipeline for nrEVE analysis in arthropod
-                genomes.
-              </p>
+              <dl className="mt-4 space-y-3">
+                {trustSignals.map((signal) => (
+                  <div
+                    key={signal.label}
+                    className="flex items-start justify-between gap-4 border-b border-border-muted/80 pb-3 last:border-b-0 last:pb-0"
+                  >
+                    <dt className="font-mono text-[0.78rem] uppercase tracking-[0.18em] text-text-tertiary">
+                      {signal.label}
+                    </dt>
+                    <dd className="max-w-[14rem] text-right text-[0.97rem] font-medium text-text-primary">
+                      {signal.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-
-            <dl className="grid gap-3 sm:grid-cols-2">
-              {trustSignals.map((signal) => (
-                <div
-                  key={signal.label}
-                  className="rounded-2xl border border-border bg-bg-panel/80 p-4"
-                >
-                  <dt className="font-mono text-[0.68rem] uppercase tracking-[0.24em] text-text-tertiary">
-                    {signal.label}
-                  </dt>
-                  <dd className="mt-2 text-sm font-medium text-text-primary">
-                    {signal.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <p className="max-w-md text-sm leading-7 text-text-secondary">
+              Downstream evidence only:{" "}
+              <Link
+                href="/applications"
+                className="text-text-primary underline-offset-4 hover:underline"
+              >
+                nexteve-app
+              </Link>{" "}
+              uses nevelib as a dependency in a separate nrEVE analysis pipeline.
+            </p>
           </div>
         }
       />
 
       <PageSection
-        eyebrow="Capability families"
-        title="What nevelib provides"
-        description="The current package surface is compact, but it already covers several recurring sequence-analysis tasks used in downstream research software."
+        eyebrow="Author and research context"
+        title="Built from recurring mosquito-genomics research software needs"
+        description="The public homepage now makes the author, research setting, and software boundary explicit instead of leaving them implied."
+      >
+        <SurfaceCard title="Davide Colombo and the research context" description={homepageResearchContext}>
+          <p className="text-[0.97rem] leading-7 text-text-secondary">
+            {homepageBoundaryContext}
+          </p>
+        </SurfaceCard>
+      </PageSection>
+
+      <PageSection
+        eyebrow="Current module families"
+        title="What the library currently covers"
+        description="The public package surface is still compact, but it already spans several recurring sequence-analysis tasks in research workflows."
       >
         <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
           {moduleFamilies.map((module) => (
@@ -95,89 +91,58 @@ export default function HomePage() {
               title={module.title}
               description={module.description}
             >
-              <dl className="space-y-2 text-sm text-text-secondary">
-                <div className="flex items-start justify-between gap-4">
-                  <dt className="font-mono text-text-tertiary">CLI</dt>
-                  <dd className="text-right font-mono text-text-primary">
-                    {module.cli}
-                  </dd>
-                </div>
-                <div className="flex items-start justify-between gap-4">
-                  <dt className="font-mono text-text-tertiary">Tools</dt>
-                  <dd className="max-w-[16rem] text-right">{module.tools}</dd>
-                </div>
-              </dl>
+              <div className="space-y-2 text-sm leading-7 text-text-secondary">
+                <p>
+                  <span className="font-mono text-text-tertiary">CLI</span>{" "}
+                  <span className="font-mono text-text-primary">{module.cli}</span>
+                </p>
+                <p>
+                  <span className="font-mono text-text-tertiary">Tools</span>{" "}
+                  {module.tools}
+                </p>
+              </div>
             </SurfaceCard>
           ))}
         </div>
       </PageSection>
 
       <PageSection
-        eyebrow="Why it exists"
-        title="Keep the reusable software layer separate from the application layer"
-        description="Downstream workflows often need the same lower-level operations. nevelib keeps those reusable pieces installable, testable, and easier to reuse without collapsing them into one application."
+        eyebrow="Library boundary"
+        title="Reusable module logic stays in nevelib; workflow interpretation stays downstream"
+        description="The separation is practical: keep lower-level sequence-analysis code installable and testable, while downstream projects add stage structure, thresholds, and biological interpretation."
       >
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
           <SurfaceCard
-            title="Reusable operations"
-            description="Read handling, search wrappers, clustering, alignment, and mapping can be shared across applications without rewriting them around one pipeline."
-          />
-          <SurfaceCard
-            title="Clear boundary"
-            description="Domain-specific orchestration, thresholds, and biological interpretation stay in downstream applications such as nexteve-app rather than being hidden inside the library."
-          />
-          <SurfaceCard
-            title="More maintainable evolution"
-            description="Keeping the reusable layer separate makes it easier to tighten tests, refine interfaces, and expand capabilities without overstating maturity."
-          />
-        </div>
-      </PageSection>
-
-      <PageSection
-        eyebrow="Execution model"
-        title="Current software profile"
-        description="The repository exposes focused modules, explicit command entry points, YAML-configured execution, and test suites across the shipped capability families."
-      >
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {executionModel.map((item) => (
-            <SurfaceCard
-              key={item.title}
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-        </div>
-      </PageSection>
-
-      <PageSection
-        eyebrow="Current downstream context"
-        title="The library stands on its own, while applications build on top of it"
-        description="nevelib is the primary public software object here. Downstream applications add their own workflow structure, thresholds, and scientific framing."
-      >
-        <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-          <SurfaceCard
-            title="Library scope"
-            description="Reusable module logic, configuration loading, parsers, tool wrappers, and importable functions intended for use across projects."
+            title="Inside the current library"
+            description="The public library surface is defined by concrete research-software components rather than a broad platform claim."
           >
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center text-sm font-medium text-accent transition-colors hover:text-accent-strong"
-            >
-              Inspect the repository
-            </a>
+            <ul className="space-y-3 text-[0.97rem] leading-7 text-text-secondary">
+              <li>Six module families exposed as focused CLIs and Python imports.</li>
+              <li>Per-module YAML configs and explicit wrappers around standard bioinformatics tools.</li>
+              <li>Shared parsers and helpers for FASTA, FASTQ, BAM, TSV, and PAF handling.</li>
+              <li>Pytest-covered code intended for reuse across projects.</li>
+            </ul>
           </SurfaceCard>
           <SurfaceCard
-            title="Downstream example"
-            description="nexteve-app depends on nevelib and adds application-level orchestration for one real nrEVE workflow context."
+            title="What stays downstream"
+            description="Application-level workflow structure, thresholds, and biological interpretation remain outside the library. nexteve-app is shown here only as one observed downstream use, not as part of nevelib itself."
           >
-            <Link
-              href="/applications"
-              className="inline-flex items-center text-sm font-medium text-accent transition-colors hover:text-accent-strong"
-            >
-              See application context
-            </Link>
+            <div className="flex flex-col items-start gap-3 pt-1">
+              <Link
+                href="/applications"
+                className="inline-flex items-center text-sm font-medium text-accent transition-colors hover:text-accent-strong"
+              >
+                See downstream context
+              </Link>
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center text-sm font-medium text-accent transition-colors hover:text-accent-strong"
+              >
+                Inspect the repository
+              </a>
+            </div>
           </SurfaceCard>
         </div>
       </PageSection>

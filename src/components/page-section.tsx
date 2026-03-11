@@ -21,7 +21,7 @@ export function PageSection({
     <section id={id} className={`space-y-8 ${className ?? ""}`}>
       <div className="max-w-3xl space-y-4">
         {eyebrow ? (
-          <p className="font-mono text-[0.74rem] uppercase tracking-[0.32em] text-accent">
+          <p className="font-mono text-[0.78rem] uppercase tracking-[0.24em] text-accent">
             {eyebrow}
           </p>
         ) : null}
@@ -38,4 +38,3 @@ export function PageSection({
     </section>
   );
 }
-

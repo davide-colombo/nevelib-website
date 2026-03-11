@@ -12,13 +12,10 @@ export const navigationItems = [
 ] as const;
 
 export const trustSignals = [
-  { label: "Package", value: "Installable Python library" },
-  { label: "Modules", value: "6 current capability families" },
-  { label: "Interfaces", value: "CLI and Python API" },
+  { label: "Scope", value: "6 current module families" },
+  { label: "Interfaces", value: "Focused CLIs and Python API" },
+  { label: "Runtime", value: "Per-module YAML configs" },
   { label: "Status", value: "Alpha-stage 0.1.0" },
-  { label: "License", value: "MIT" },
-  { label: "Runtime model", value: "YAML-configured modules" },
-  { label: "Python", value: "Requires 3.11+" },
 ] as const;
 
 export const moduleFamilies = [
@@ -27,7 +24,7 @@ export const moduleFamilies = [
     moduleId: "nevelib.reads",
     cli: "nevelib-reads",
     description:
-      "BAM-to-FASTQ extraction, trimming checkpoints, and quality-control steps for sequencing reads.",
+      "FASTQ extraction from alignments, trimming, compression, and read-level quality checks for sequencing data.",
     tools: "samtools, fastp, fastqc, pigz",
   },
   {
@@ -35,7 +32,7 @@ export const moduleFamilies = [
     moduleId: "nevelib.assembly",
     cli: "nevelib-assembly",
     description:
-      "Digital normalization, de novo assembly support, coverage filtering, and deduplication for assembled contigs.",
+      "Digital normalization, assembly support, coverage-based filtering, and deduplication for contig sets.",
     tools: "bbnorm.sh, spades.py, mosdepth, blastn, samtools, pigz",
   },
   {
@@ -43,7 +40,7 @@ export const moduleFamilies = [
     moduleId: "nevelib.search",
     cli: "nevelib-search",
     description:
-      "BLAST-based sequence search, hit parsing, filtering, and lightweight classification helpers.",
+      "BLAST-based homology search, hit parsing, and filtering steps for sequence evidence review.",
     tools: "blastn, blastx, makeblastdb",
   },
   {
@@ -51,7 +48,7 @@ export const moduleFamilies = [
     moduleId: "nevelib.clustering",
     cli: "nevelib-clustering",
     description:
-      "MMseqs2-based clustering for grouping related sequences in reusable downstream steps.",
+      "MMseqs2 wrappers for collapsing or grouping related sequences in reusable downstream analyses.",
     tools: "mmseqs",
   },
   {
@@ -59,7 +56,7 @@ export const moduleFamilies = [
     moduleId: "nevelib.msa",
     cli: "nevelib-msa",
     description:
-      "MAFFT wrappers and alignment utilities for analyses that need reusable MSA building blocks.",
+      "MAFFT-backed alignment utilities for analyses that need reusable multiple sequence alignment steps.",
     tools: "mafft",
   },
   {
@@ -67,7 +64,7 @@ export const moduleFamilies = [
     moduleId: "nevelib.mapping",
     cli: "nevelib-mapping",
     description:
-      "minimap2 execution and PAF parsing for mapping-based analysis steps and confirmation logic.",
+      "minimap2 execution and PAF parsing for reference-guided checks and pairwise mapping tasks.",
     tools: "minimap2",
   },
 ] as const;

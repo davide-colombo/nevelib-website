@@ -104,10 +104,10 @@ export default function GettingStartedPage() {
             <table className="min-w-full border-collapse text-left text-sm">
               <thead className="bg-bg-panel/85">
                 <tr className="border-b border-border">
-                  <th className="px-5 py-4 font-mono text-[0.72rem] uppercase tracking-[0.28em] text-text-tertiary">
+                  <th className="px-5 py-4 font-mono text-[0.78rem] uppercase tracking-[0.22em] text-text-tertiary">
                     Module
                   </th>
-                  <th className="px-5 py-4 font-mono text-[0.72rem] uppercase tracking-[0.28em] text-text-tertiary">
+                  <th className="px-5 py-4 font-mono text-[0.78rem] uppercase tracking-[0.22em] text-text-tertiary">
                     Tools on PATH
                   </th>
                 </tr>

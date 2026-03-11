@@ -13,30 +13,30 @@ const config: Config = {
         },
         text: {
           primary: "#F2F6FB",
-          secondary: "#A2B0C1",
-          tertiary: "#708094",
+          secondary: "#B2BECC",
+          tertiary: "#8491A3",
         },
         accent: {
           DEFAULT: "#8FB5E2",
           strong: "#BCD5F2",
-          subtle: "#15263A",
+          subtle: "#132233",
         },
         border: {
-          DEFAULT: "#263446",
-          muted: "#1A2634",
+          DEFAULT: "#2A394C",
+          muted: "#1D2A38",
         },
         success: "#8BB997",
         warning: "#D2B77B",
       },
       boxShadow: {
-        panel: "0 16px 40px rgba(2, 8, 20, 0.24)",
+        panel: "0 14px 34px rgba(2, 8, 20, 0.18)",
       },
       maxWidth: {
         page: "78rem",
       },
       backgroundImage: {
         grid:
-          "linear-gradient(rgba(143, 181, 226, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(143, 181, 226, 0.07) 1px, transparent 1px)",
+          "linear-gradient(rgba(143, 181, 226, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(143, 181, 226, 0.05) 1px, transparent 1px)",
       },
       fontFamily: {
         sans: ["var(--font-ibm-plex-sans)", "sans-serif"],

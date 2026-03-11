@@ -31,14 +31,14 @@ export function PageHero({
 
   return (
     <section
-      className={`relative overflow-hidden rounded-[1.5rem] border border-border bg-bg-surface/92 shadow-panel ${className ?? ""}`}
+      className={`relative overflow-hidden rounded-[1.45rem] border border-border bg-bg-surface/94 shadow-panel ${className ?? ""}`}
     >
       <div
         aria-hidden="true"
         className={`absolute inset-0 ${
           isCompact
-            ? "bg-[linear-gradient(180deg,rgba(143,181,226,0.05),transparent_52%)]"
-            : "bg-[linear-gradient(135deg,rgba(143,181,226,0.08),transparent_50%)]"
+            ? "bg-[linear-gradient(180deg,rgba(143,181,226,0.035),transparent_54%)]"
+            : "bg-[linear-gradient(135deg,rgba(143,181,226,0.05),transparent_52%)]"
         }`}
       />
       <div
@@ -50,7 +50,7 @@ export function PageHero({
       >
         <div className="space-y-6">
           <div className="space-y-4">
-            <p className="font-mono text-[0.74rem] uppercase tracking-[0.32em] text-accent">
+            <p className="font-mono text-[0.78rem] uppercase tracking-[0.24em] text-accent">
               {eyebrow}
             </p>
             <h1
@@ -76,8 +76,8 @@ export function PageHero({
                     rel="noreferrer"
                     className={
                       action.variant === "secondary"
-                        ? "inline-flex items-center justify-center rounded-md border border-border bg-bg-panel px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent/40 hover:text-accent-strong"
-                        : "inline-flex items-center justify-center rounded-md border border-accent/45 bg-accent-subtle/70 px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent-strong"
+                        ? "inline-flex items-center justify-center rounded-md border border-border bg-bg-panel/70 px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-text-tertiary hover:text-text-primary"
+                        : "inline-flex items-center justify-center rounded-md border border-accent/40 bg-accent-subtle/38 px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent/60 hover:text-accent-strong"
                     }
                   >
                     {action.label}
@@ -88,8 +88,8 @@ export function PageHero({
                     href={action.href}
                     className={
                       action.variant === "secondary"
-                        ? "inline-flex items-center justify-center rounded-md border border-border bg-bg-panel px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent/40 hover:text-accent-strong"
-                        : "inline-flex items-center justify-center rounded-md border border-accent/45 bg-accent-subtle/70 px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent-strong"
+                        ? "inline-flex items-center justify-center rounded-md border border-border bg-bg-panel/70 px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-text-tertiary hover:text-text-primary"
+                        : "inline-flex items-center justify-center rounded-md border border-accent/40 bg-accent-subtle/38 px-5 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent/60 hover:text-accent-strong"
                     }
                   >
                     {action.label}
