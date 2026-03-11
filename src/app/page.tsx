@@ -13,18 +13,18 @@ export const metadata = buildMetadata({
 });
 
 const homepageResearchContext =
-  "nevelib is built by Davide Colombo, a third-year PhD candidate with a biomedical engineering and bioengineering background. His current research studies Aedes albopictus mosquito genomics, with particular attention to endogenous viral elements, transposable-element context, piRNA-related analyses, and the reusable bioinformatics workflows needed to support that work.";
+  "nevelib is maintained by Davide Colombo, a third-year PhD candidate in biomedical engineering studying Aedes albopictus mosquito genomics — endogenous viral elements, transposable-element context, and piRNA-related analyses. The library extracts the reusable sequence-analysis code from that research into a shared layer.";
 
 const homepageBoundaryContext =
-  "The library exists to keep those recurring sequence-analysis operations in a reusable layer. Downstream applications can then add project-specific orchestration, thresholds, and biological interpretation without forcing every research workflow to rebuild the same lower-level software.";
+  "Downstream projects add their own orchestration, thresholds, and biological interpretation on top. nevelib handles the lower-level operations they have in common.";
 
 export default function HomePage() {
   return (
     <>
       <PageHero
-        eyebrow="Reusable bioinformatics library"
-        title="Reusable sequence-analysis modules for Python research workflows."
-        description="nevelib is an installable Python library for read preparation, assembly support, homology search, clustering, multiple sequence alignment, and mapping. It exposes focused CLIs and importable Python modules so downstream research software can reuse these operations without absorbing them into one application."
+        eyebrow="Bioinformatics library"
+        title="Sequence-analysis modules for Python research workflows."
+        description="nevelib provides read preparation, assembly support, homology search, clustering, multiple sequence alignment, and mapping as installable Python modules and focused CLIs. Research software can import what it needs without bundling these operations into each project."
         className="min-h-[72svh]"
         actions={[
           { href: "/getting-started", label: "Get started" },
@@ -67,9 +67,9 @@ export default function HomePage() {
       />
 
       <PageSection
-        eyebrow="Author and research context"
-        title="Built from recurring mosquito-genomics research software needs"
-        description="The public homepage now makes the author, research setting, and software boundary explicit instead of leaving them implied."
+        eyebrow="Context"
+        title="Where this comes from"
+        description="Who maintains the library and what research drives it."
       >
         <SurfaceCard title="Davide Colombo and the research context" description={homepageResearchContext}>
           <p className="text-[0.97rem] leading-7 text-text-secondary">
@@ -80,8 +80,8 @@ export default function HomePage() {
 
       <PageSection
         eyebrow="Current module families"
-        title="What the library currently covers"
-        description="The public package surface is still compact, but it already spans several recurring sequence-analysis tasks in research workflows."
+        title="Module families"
+        description="Six module families covering common sequence-analysis operations, each exposed as a CLI and a Python import."
       >
         <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
           {moduleFamilies.map((module) => (
@@ -108,13 +108,13 @@ export default function HomePage() {
 
       <PageSection
         eyebrow="Library boundary"
-        title="Reusable module logic stays in nevelib; workflow interpretation stays downstream"
-        description="The separation is practical: keep lower-level sequence-analysis code installable and testable, while downstream projects add stage structure, thresholds, and biological interpretation."
+        title="What stays in the library and what doesn't"
+        description="nevelib owns installable, testable sequence-analysis code. Workflow structure, biological thresholds, and interpretation belong to downstream projects."
       >
         <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
           <SurfaceCard
             title="Inside the current library"
-            description="The public library surface is defined by concrete research-software components rather than a broad platform claim."
+            description="Concrete components, not a platform."
           >
             <ul className="space-y-3 text-[0.97rem] leading-7 text-text-secondary">
               <li>Six module families exposed as focused CLIs and Python imports.</li>
@@ -125,7 +125,7 @@ export default function HomePage() {
           </SurfaceCard>
           <SurfaceCard
             title="What stays downstream"
-            description="Application-level workflow structure, thresholds, and biological interpretation remain outside the library. nexteve-app is shown here only as one observed downstream use, not as part of nevelib itself."
+            description="Workflow logic, thresholds, and biological interpretation. nexteve-app is one downstream consumer, not part of this library."
           >
             <div className="flex flex-col items-start gap-3 pt-1">
               <Link

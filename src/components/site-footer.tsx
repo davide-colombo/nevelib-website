@@ -3,16 +3,16 @@ import Link from "next/link";
 import { githubUrl } from "@/lib/site-content";
 
 const footerProjectText =
-  "nevelib documents reusable sequence-analysis software extracted from ongoing research work rather than acting as a one-off pipeline landing page.";
+  "Reusable sequence-analysis software extracted from ongoing mosquito-genomics research.";
 
 const footerResearchText =
-  "The library is maintained by Davide Colombo and reflects research on Aedes albopictus genomics, endogenous viral elements, transposable-element context, piRNA-related analyses, and reusable bioinformatics workflow design.";
+  "Maintained by Davide Colombo. Research focus: Aedes albopictus genomics, endogenous viral elements, transposable-element context, piRNA analyses.";
 
 const footerBoundaryText =
-  "nevelib remains the reusable software layer; downstream applications such as nexteve-app add project-specific orchestration, thresholds, and biological interpretation.";
+  "nevelib is the shared library layer. Downstream projects like nexteve-app add their own orchestration and interpretation.";
 
 const footerSourceNote =
-  "Website content is tied to the public nevelib codebase and its documented downstream context.";
+  "Content reflects the public nevelib codebase.";
 
 export function SiteFooter() {
   return (

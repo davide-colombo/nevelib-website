@@ -133,7 +133,7 @@ export const externalToolMatrix = [
 ] as const;
 
 export const applicationsPlaceholder =
-  "No public application profile is available yet. nevelib is designed to support downstream applications rather than serve as a complete workflow on its own. The current downstream example is nexteve-app, a separate nrEVE analysis pipeline built on nevelib. This section will expand when its scope, inputs, outputs, and scientific framing can be described precisely.";
+  "No public application profile yet. nevelib is designed as a dependency for downstream analysis software. The current example is nexteve-app, a separate nrEVE analysis pipeline. This section will expand once its scope and outputs are documented.";
 
 export const publicationsPlaceholder =
-  "No publication is linked here yet. A nevelib-centered methodological paper is planned, and official references will be added once a public preprint or journal article exists. Biological papers from downstream applications will be listed separately and with their scope made explicit.";
+  "No publications yet. A methodological paper on nevelib is planned; references will appear here once a preprint or journal article is public. Papers from downstream applications will be listed separately.";
