@@ -1,0 +1,45 @@
+@config "../../tailwind.config.ts";
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #091018;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #8fb5e2;
+  color: #091018;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+code {
+  font-family: var(--font-ibm-plex-mono);
+}
+
