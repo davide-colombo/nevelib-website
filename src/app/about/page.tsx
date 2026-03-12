@@ -12,9 +12,10 @@ export const metadata = buildMetadata({
 });
 
 const aboutAuthorResearchParagraphs = [
-  "nevelib was built by Davide Colombo, a third-year PhD candidate with a biomedical engineering and bioengineering background. The library grew out of day-to-day research software needs rather than from a generic platform exercise.",
-  "His current research focuses on Aedes albopictus mosquito genomics, especially endogenous viral elements, their transposable-element context, piRNA-related analyses, and the reproducible computational workflows required to study those questions across datasets.",
-  "nevelib exists as the reusable software layer for those recurring sequence-analysis tasks. Downstream applications can then handle project-specific orchestration, thresholds, reporting, and biological interpretation while the underlying library stays installable, testable, and reusable.",
+  "nevelib is maintained by Davide Colombo, a PhD candidate in the National PhD programme in One Health Approaches to Infectious Diseases and Life Science Research, hosted by the University of Pavia.",
+  "His research is carried out in the Bonizzoni Lab at the Department of Biology and Biotechnology, University of Pavia, under the supervision of Prof. Mariangela Bonizzoni. The lab studies mosquito biology, arboviruses, and genome structure in invasive vectors.",
+  "The PhD programme is part of the INF-ACT Foundation (One Health Basic and Translational Research Actions Addressing Unmet Needs on Emerging Infectious Diseases), a national consortium funded under the PNRR by the Italian Ministry of University and Research with European Union NextGenerationEU support.",
+  "nevelib extracts reusable sequence-analysis code from this research context into an installable library. Downstream projects handle their own orchestration, thresholds, and biological interpretation.",
 ] as const;
 
 export default function AboutPage() {
@@ -29,17 +30,44 @@ export default function AboutPage() {
 
       <PageSection
         eyebrow="Author and research context"
-        title="Author and research context"
-        description="The scientific setting that drives the library's development."
+        title="Research context"
+        description="The lab, PhD programme, and funding context behind the library."
       >
         <div className="grid gap-5 lg:grid-cols-[1.4fr_0.6fr]">
           <SurfaceCard
-            title="Author and research context"
+            title="Research context"
             description={aboutAuthorResearchParagraphs[0]}
           >
             <div className="space-y-4 text-[0.97rem] leading-7 text-text-secondary">
               <p>{aboutAuthorResearchParagraphs[1]}</p>
               <p>{aboutAuthorResearchParagraphs[2]}</p>
+              <p>{aboutAuthorResearchParagraphs[3]}</p>
+              <div className="flex flex-col gap-2 pt-2 text-sm">
+                <a
+                  href="https://bonizzonilab.unipv.it/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-accent transition-colors hover:text-accent-strong"
+                >
+                  Bonizzoni Lab
+                </a>
+                <a
+                  href="https://spmsf.dip.unipv.it/it/didattica/post-laurea/dottorati-di-ricerca/phd-one-health"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-accent transition-colors hover:text-accent-strong"
+                >
+                  PhD One Health — University of Pavia
+                </a>
+                <a
+                  href="https://www.inf-act.it/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-accent transition-colors hover:text-accent-strong"
+                >
+                  INF-ACT Foundation
+                </a>
+              </div>
             </div>
           </SurfaceCard>
           <SurfaceCard
